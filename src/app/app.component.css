@@ -1,0 +1,28 @@
+p {
+  font-family: Lato;
+}
+
+
+
+.group {
+  margin-top: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 50px;
+  border: 1px solid white;
+}
+
+.item {
+  border: 1px solid red;
+  background: whitesmoke;
+  height: 100%;
+  width: 100%;
+}
+
+.body-wrapper {
+    background:lightblue;
+}

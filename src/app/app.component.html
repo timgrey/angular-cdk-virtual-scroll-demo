@@ -1,0 +1,33 @@
+<div class='body-wrapper'>
+  <h1 class="center">Virtual Scroll using Angular 7</h1>
+
+  <button (click)="dealService.sort('company')">Sort By Company</button>
+  <button (click)="dealService.sort('industry')">Sort By Industry</button>
+  <button (click)="dealService.sort('status')">Sort By Status</button>
+                       
+  <cdk-virtual-scroll-viewport style="height: 95vh" autosize>
+    <ng-container *cdkVirtualFor="let key of dealService.formattedKeys; let i = index">        
+        
+
+        <div *ngIf="dealService.isObject(key)" class='title-row'>
+          <h1>{{key.category}}</h1>
+        </div>
+
+        <div *ngIf="!dealService.isObject(key)" class='row'>
+          <div class='item'>
+            Company: {{this.dealService.myDeals[key].company}}
+          </div>
+          <div class='item'>
+            Industry:{{this.dealService.myDeals[key].industry}}
+          </div>
+          <div class='item'>
+            Status:{{this.dealService.myDeals[key].status}}
+          </div>
+          <div class='item'>
+            Amount:{{this.dealService.myDeals[key].amount}}
+          </div>
+        </div>
+
+    </ng-container>
+  </cdk-virtual-scroll-viewport>
+</div>
